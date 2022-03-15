@@ -1,13 +1,399 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+a {
+  text-decoration: none;
+  color: #252525;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.nav-bar{
+  width: 100%;
+  background-color: #333;
+  height: 30px;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  vertical-align: bottom;
+  
+}
+
+.nav-button {
+  cursor: pointer;
+}
+
+.nav li {
+  display: inline;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  height:30px;
+}
+
+.nav li a {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  background-color: #111;
+}
+
+.nav-right a {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-right a:hover{
+  background-color: #111;
+}
+
+.avatar {
+  height: 30px;
+  border-radius: 25px;
+}
+
+.large-avatar {
+  height: 120px;
+  border-radius: 25px;
+}
+
+.nav-right{
+  float: right;
+  color:white;
+  margin-left: 10px;
+  margin-right: 20px;
+  height:30px;
+  overflow: hidden;
+ 
+}
+
+.question-results{
+  margin: auto;
+  width: 600px;
+  border: 5px solid #333;
+  height: 400px;
+  position: relative;
+  display: block;
+  overflow:hidden;
+  margin-top: 40px;
+ 
+}
+
+.asked-by{
+  border: 1px solid #333;
+  height:20px;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(226, 222, 222);
+  font-weight: bold;
+}
+.left-results{
+  width: 30%;
+  display:inline;
+  float:left;
+  border-right: 1px solid silver;
+  height: inherit;
+  text-align: center;
+  padding-top:100px;
+  
+}
+
+.right-results{
+ 
+  display:inline;
+  float:left;
+  padding-left: 25px;
+  margin-top: 15px;
+  text-align: left;
+ 
+  
+}
+
+.center {
+  text-align: center;
+}
+
+.info-stamp{
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  color:silver;
+  margin-top: 5px;
+}
+
+.question-button {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+  border: 2px solid silver;
+  border-radius: 20px;
+  
+ 
+}
+
+.question-list{
+ text-align: center;
+ margin: 0px auto;
+ width: 600px;
+
+}
+
+.question-box{
+  margin-top: 15px;
+}
+
+.question-separator{
+  margin-left: 50px;
+}
+
+.question-frame {
+  width: 600px;
+  border: 3px solid #333;
+  height: 200px;
+  overflow:hidden; 
+}
+
+
+.question-author {
+  width: 30%;
+  display:inline;
+  float:left;
+  border-right: 1px solid silver;
+  height: inherit;
+  text-align: center;
+  padding-top:10px;
+}
+
+.question-avatar-line{
+  width: 90%;
+  display:flex;
+  max-width: 590px;
+  padding: 10px;
+  margin: 0 auto;
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+}
+
+.question-avatar-left
+{
+  flex:0 0 25%
+}
+
+.question-avatar-right
+{
+  flex: 1
+}
+
+.meter { 
+  height: 20px; 
+ 
+  text-align: right;
+  position: relative;
+  background: #555;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  margin:10px;
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(43,194,83);
+  background-image: linear-gradient(
+    center bottom,
+    rgb(43,194,83) 37%,
+    rgb(84,240,84) 69%
+  );
+  box-shadow: 
+    inset 0 2px 9px  rgba(255,255,255,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.question-results-box{
+  margin-bottom: 20px;
+  min-width: 360px;
+}
+
+.question-inner-box{
+  margin-bottom: 20px;
+  min-width: 360px;
+}
+
+.new-question {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  text-transform: uppercase;
+  margin: 35px auto;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.29);
+  cursor: pointer;
+  background: #fff;
+  font-size: 16px;
+  width: 250px;
+  position: relative;
+}
+
+.btn:hover {
+  border-color: rgba(0,0,0,.5);
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 0;
+  font-weight: 700;
+  border-width: 2px;
+}
+
+.login-frame{
+  margin: auto;
+  width: 600px;
+  border: 5px solid #333;
+  height: 400px;
+  position: relative;
+  display: block;
+  overflow:hidden;
+ 
+}
+
+.toggle-answered{
+  
+  background:#fff;
+  color: rgb(80, 78, 78);
+  cursor: pointer;
+  margin-bottom: 20px;
+  height:40px;
+}
+
+.toggle-answered:disabled{
+  background:#333;
+  color: #fff;
+  cursor: default;
+}
+
+.leaderboard-frame {
+  width: 600px;
+  border: 3px solid #333;
+  height: 180px;
+  overflow:visible; 
+  margin-top: 15px;
+  
+}
+
+.leaderboard-title{
+  font-weight: 700;
+  font-size: 26pt ;
+  margin: 40px;
+}
+
+.leaderboard-name{
+  font-weight: 700;
+  font-size: 16pt ;
+  margin-top: 30px;
+}
+
+.leaderboard-count{
+  font-weight: 700;
+  font-size: 12pt ;
+  margin-top: 20px;
+}
+
+.leaderboard-score{
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+  float: left;
+}
+
+.leaderboard-left{
+  float: left;
+  width: 150px;
+  border-right: 1px solid silver;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+ 
+  
+}
+
+.leaderboard-center{
+  float:left;
+  width: 300px;
+  border-right: 1px solid silver;
+  height:100%;
+ 
+
+}
+
+.leaderboard-right{
+ 
+  width: 145px;
+  height:100%;
+  display: flex;
+  text-align: center;
+}
+
+.leaderboard-right-inset{
+  height:100%;
+  justify-content:baseline;
+  align-items:center;
+  margin-left: 20px;
+}
+
+.leaderboard-score{
+  height:100px;
+  width:80px;
+  border: 1px solid silver;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.leaderboard-score-title{
+  font-weight: 700;
+  font-size: 12pt ;
+  margin-top: 20px;
+ text-align: center;
+}
+
+.leaderboard-score-value{
+  height:40px;
+  width:40px;
+  border: 1px solid silver;
+  border-radius: 25px;
+  background-color: rgb(211, 104, 16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
 }
