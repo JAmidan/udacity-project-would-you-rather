@@ -19,6 +19,7 @@ export default function question(state ={}, action){
             }
             
         case RECEIVE_QUESTIONS :
+        
            return {
                ...state,
                ...action.questions

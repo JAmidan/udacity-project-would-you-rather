@@ -55,8 +55,16 @@ class HomePage extends Component{
 }
 
 function mapStateToProps ({questions}){
+
+   
+    let sortedQuestions = Object.values(questions).sort((a,b) => (a.timestamp < b.timestamp ) ? 1 : -1);
+
+    let sortedIds = sortedQuestions.map(a => a.id);
+    
+
     return{
-        questionIds: Object.keys(questions)
+        //questionIds: Object.keys(questions)
+        questionIds: sortedIds
         //Todo: determine sort order or grouping based on status of the question
     }
 }

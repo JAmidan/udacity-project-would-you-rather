@@ -8,6 +8,8 @@ import QuestionPage from './QuestionPage'
 import NewQuestion from './NewQuestion'
 import LoginPage from './LoginPage'
 import LeaderBoard from './LeaderBoard'
+import NotFound from './NotFound'
+import { Switch } from 'react-router-dom'
 
 
 
@@ -28,10 +30,13 @@ class App extends Component{
           
             {this.props.loading === true ? <LoginPage /> :
                 <div>
-                <Route path='/' exact component={HomePage} />
-                <Route path='/question/:id' component={QuestionPage}/>
-                <Route path='/new' component={NewQuestion} />
-                <Route path='/leaderboard' component={LeaderBoard}/>
+                <Switch>
+                    <Route path='/' exact component={HomePage} />
+                    <Route path='/question/:id' component={QuestionPage}/>
+                    <Route path='/new' component={NewQuestion} />
+                    <Route path='/leaderboard' component={LeaderBoard}/>
+                    <Route path='*' component={NotFound} />
+                </Switch>
                 </div>
             }
         </div>
