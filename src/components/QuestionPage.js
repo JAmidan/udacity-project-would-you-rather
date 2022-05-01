@@ -1,10 +1,11 @@
 import React, { Component,Fragment } from 'react'
 import { connect } from 'react-redux'
-import { Link, withRouter } from 'react-router-dom'
+import { Link, withRouter, Redirect } from 'react-router-dom'
 import { formatQuestion, checkAnswers } from '../utils/helpers'
 import { handleAnswerQuestion } from '../actions/questions'
 import Nav from './Nav'
 import QuestionResults from './QuestionResults'
+import NotFound from './NotFound'
 
 
 
@@ -42,6 +43,17 @@ const { question } = this.props
 const { authedUser } = this.props
 //const { users } = this.props
 //const author = users[question.author]
+
+if(typeof(question) == "undefined"){
+    return(
+
+        <div>
+                     
+            <div> <NotFound /> </div>
+           
+        </div>
+        )
+}
 
 const {formatedQuestion} = this.props
 
@@ -107,7 +119,7 @@ if(answerCheck !== true)
               
                 <div> <Nav /> </div>
                
-                <div> <QuestionResults question={question} /></div>
+                <div> <QuestionResults question={question} /> </div>
                
             </div>
 
@@ -124,31 +136,21 @@ if(answerCheck !== true)
 
 }
 
-// function mapStateToProps({authedUser, users, questions}, props){
-
-//     const { id } = props.match.params
-//     const question = questions[id]
-//     console.log('id', id)
-//     console.log('MapStateQuestion', question)
-
-//     return {
-//         authedUser,
-//         users,
-//         question
-        
-//     }
-// }
 
 function mapStateToProps({authedUser, users, questions}, props )
 {
     const { id } = props.match.params
     const question = questions[id]
 
-   return { 
-        formatedQuestion: question ? formatQuestion(question, users, authedUser) : null,
-        authedUser,
-        question
-    }
+    console.log("Question Page: " , question);
+
+            return { 
+            formatedQuestion: question ? formatQuestion(question, users, authedUser) : null,
+            authedUser,
+            question
+        }
+
+       
 }
 
 export default withRouter(connect(mapStateToProps)(QuestionPage))

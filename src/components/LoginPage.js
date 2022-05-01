@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
+import HomePage from './HomePage'
+import Nav from './Nav'
 
 class LoginPage extends Component{
 
@@ -18,6 +20,10 @@ class LoginPage extends Component{
 
 
         const { users } = this.props
+        const {authedUser} = this.props
+
+        if(authedUser == null)
+        {
          
         return(
             <div className='login-frame'>
@@ -36,6 +42,21 @@ class LoginPage extends Component{
 
             </div>
         )
+    }
+
+        else{
+            return(
+
+                <div>
+                  
+                    <div> <Nav /> </div>
+                   
+                    <div> <HomePage /> </div>
+                   
+                </div>
+    
+        )
+        }
     }
 }
 
